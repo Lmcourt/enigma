@@ -1,3 +1,5 @@
+require 'date'
+
 class Enigma
 
   def random_num
@@ -6,5 +8,7 @@ class Enigma
     end.join
   end
 
-  
+  def todays_date
+    Date.today.strftime("%d%m%y")
+  end
 end
