@@ -14,4 +14,11 @@ RSpec.describe Enigma do
 
     expect(enigma.random_num).to eq('94860')
   end
+
+  it 'generates todays date' do
+    enigma = Enigma.new
+    # allow(enigma).to receive(:todays_date).and_return('060821')
+
+    expect(enigma.todays_date).to eq('060821')
+  end
 end
