@@ -62,8 +62,7 @@ class Shifter
       else
         new_message << letter
       end
-      # require "pry"; binding.pry
-      new_message.join
     end
+    new_message.join
   end
 end
