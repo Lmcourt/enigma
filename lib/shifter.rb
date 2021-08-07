@@ -61,4 +61,32 @@ class Shifter
     end
     new_message.join
   end
+
+  def decrypt(message)
+    new_message = []
+    message.each_char.with_index do |letter, i|
+      idx = characters.index(letter)
+      if characters.include?(letter)
+        if i % 4 == 0
+          a_idx = (idx - shifts[:A]) % characters.length
+          new_message << characters[a_idx]
+        elsif
+          i % 4 == 1
+          b_idx = (idx - shifts[:B]) % characters.length
+          new_message << characters[b_idx]
+        elsif
+          i % 4 == 2
+          c_idx = (idx - shifts[:C]) % characters.length
+          new_message << characters[c_idx]
+        elsif
+          i % 4 == 3
+          d_idx = (idx - shifts[:D]) % characters.length
+          new_message << characters[d_idx]
+        end
+      else
+        new_message << letter
+      end
+    end
+    new_message.join
+  end
 end
