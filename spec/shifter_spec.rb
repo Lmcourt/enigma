@@ -16,22 +16,9 @@ RSpec.describe Shifter do
     expect(shifter.date).to eq('060821')
   end
 
-  it 'has an A key' do
+  it 'has keys' do
     shifter = Shifter.new("12345", '060821')
-    expect(shifter.a_key).to eq("12")
-  end
-
-  it 'has an B key' do
-    shifter = Shifter.new("12345", '060821')
-    expect(shifter.b_key).to eq("23")
-  end
-  it 'has an C key' do
-    shifter = Shifter.new("12345", '060821')
-    expect(shifter.c_key).to eq("34")
-  end
-  it 'has an D key' do
-    shifter = Shifter.new("12345", '060821')
-    expect(shifter.d_key).to eq("45")
+    expect(shifter.keys).to eq(["12", "23", "34", "45"])
   end
 
   it 'squares the date' do
@@ -42,6 +29,8 @@ RSpec.describe Shifter do
   it 'takes last four digets of date squared' do
     shifter = Shifter.new("12345", '060821')
 
-    expect(shifter.last_four).to eq("4041")
+    expect(shifter.offsets).to eq(["4", "0", "4", "1"])
   end
+
+  
 end
