@@ -35,6 +35,18 @@ RSpec.describe Shifter do
   it 'sums key and offset to get shifts' do
     shifter = Shifter.new("12345", '060821')
 
-    expect(shifter.shifts).to eq({ :A => "16", :B => "23", :C => "38", :D => "46"})
+    expect(shifter.shifts).to eq({ :A => 16, :B => 23, :C => 38, :D => 46})
   end
+
+  it 'has an alphabet array' do
+    shifter = Shifter.new("12345", '060821')
+
+    expect(shifter.characters).to eq(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "])
+  end
+
+  it 'encrypts the message' do
+    shifter = Shifter.new("02715", '040895')
+    expect(shifter.encrypt("hello world")).to eq("keder ohulw")
+  end
+
 end
