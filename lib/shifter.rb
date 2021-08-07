@@ -34,13 +34,9 @@ class Shifter
     ("a".."z").to_a << " "
   end
 
-  # def rotate(letter)
-  #   alpha_array.rotate(shifts[letter])
-  # end
-
   def encrypt(message)
     new_message = []
-    message.each_char.with_index do | letter, i|
+    message.each_char.with_index do |letter, i|
       idx = characters.index(letter)
       if characters.include?(letter)
         if i % 4 == 0
