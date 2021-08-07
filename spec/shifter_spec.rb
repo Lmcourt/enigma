@@ -49,4 +49,9 @@ RSpec.describe Shifter do
     expect(shifter.encrypt("hello world")).to eq("keder ohulw")
   end
 
+  it 'decrypts the message' do
+    shifter = Shifter.new("02715", '040895')
+    expect(shifter.decrypt("keder ohulw")).to eq("hello world")
+  end
+
 end
