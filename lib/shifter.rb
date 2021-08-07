@@ -21,4 +21,12 @@ class Shifter
   def d_key
     d = @key[3..4]
   end
+
+  def date_squared
+    @date.to_i ** 2
+  end
+
+  def last_four
+    date_squared.to_s[-4..-1]
+  end
 end
