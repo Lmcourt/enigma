@@ -33,4 +33,15 @@ RSpec.describe Shifter do
     shifter = Shifter.new("12345", '060821')
     expect(shifter.d_key).to eq("45")
   end
+
+  it 'squares the date' do
+    shifter = Shifter.new("12345", '060821')
+    expect(shifter.date_squared).to eq(3699194041)
+  end
+
+  it 'takes last four digets of date squared' do
+    shifter = Shifter.new("12345", '060821')
+
+    expect(shifter.last_four).to eq("4041")
+  end
 end
