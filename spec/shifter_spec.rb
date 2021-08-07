@@ -32,5 +32,9 @@ RSpec.describe Shifter do
     expect(shifter.offsets).to eq(["4", "0", "4", "1"])
   end
 
-  
+  it 'sums key and offset to get shifts' do
+    shifter = Shifter.new("12345", '060821')
+
+    expect(shifter.shifts).to eq({ "a" => "16", "b" => "23", "c" => "38", "d" => "46"})
+  end
 end
