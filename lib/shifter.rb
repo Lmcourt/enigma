@@ -23,10 +23,10 @@ class Shifter
 
   def shifts
     shifts = {}
-    shifts["a"] = (offsets[0].to_i + keys[0].to_i).to_s
-    shifts["b"] = (offsets[1].to_i + keys[1].to_i).to_s
-    shifts["c"] = (offsets[2].to_i + keys[2].to_i).to_s
-    shifts["d"] = (offsets[3].to_i + keys[3].to_i).to_s
+    shifts[:A] = (offsets[0].to_i + keys[0].to_i).to_s
+    shifts[:B] = (offsets[1].to_i + keys[1].to_i).to_s
+    shifts[:C] = (offsets[2].to_i + keys[2].to_i).to_s
+    shifts[:D] = (offsets[3].to_i + keys[3].to_i).to_s
     shifts
   end
 end
