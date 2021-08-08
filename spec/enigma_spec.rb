@@ -1,7 +1,5 @@
 require 'date'
 require './lib/enigma'
-require './lib/shifter'
-require './lib/cryption'
 require 'simplecov'
 SimpleCov.start
 
@@ -70,5 +68,19 @@ RSpec.describe Enigma do
     date: '040895'
     }
     expect(enigma.decrypt("keder ohulw", "02715")).to eq(expected)
+  end
+
+  it 'encrypts a message (generates random key and uses todays date)' do
+    enigma = Enigma.new
+    allow(enigma).to receive(:todays_date).and_return('040895')
+    allow(enigma).to receive(:random_num).and_return('12345')
+
+    expected = {
+    encryption: "uauhawekdhm",
+     key: "12345",
+    date: '040895'
+    }
+
+    expect(enigma.encrypt("hello world")).to eq(expected)
   end
 end
