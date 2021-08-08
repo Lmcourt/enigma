@@ -10,10 +10,8 @@ class Decryption
 
   def decrypt(message)
     message.downcase.each_char.with_index.map do |letter, i|
-      idx = characters.index(letter)
-      if characters.include?(letter)
-          a_idx = (idx - shifts.values[i % 4]) % characters.length
-          characters[a_idx]
+      if chars.include?(letter)
+          chars[(chars.index(letter) - shifts.values[i % 4]) % chars.length]
       else
         letter
       end
