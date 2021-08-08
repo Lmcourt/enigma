@@ -27,7 +27,6 @@ RSpec.describe Enigma do
 
   it 'encrypts with key and date' do
     enigma = Enigma.new
-    # Might not work if given key and not date or vise versa
 
     expected = {
     encryption: "keder ohulw",
