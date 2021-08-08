@@ -1,12 +1,12 @@
 require './lib/shifter'
 class Decryption
 
-    include Shifter
-    attr_reader :key, :date
-    def initialize(key, date)
-      @key = key
-      @date = date
-    end
+  include Shifter
+  attr_reader :key, :date
+  def initialize(key, date)
+    @key = key
+    @date = date
+  end
 
   def decrypt(message)
     message.each_char.with_index.map do |letter, i|
