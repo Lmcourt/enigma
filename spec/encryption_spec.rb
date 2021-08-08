@@ -10,5 +10,7 @@ RSpec.describe Encryption do
   it 'encrypts' do
     encrypt = Encryption.new("02715", '040895')
     expect(encrypt.encrypt("hello world")).to eq("keder ohulw")
+    expect(encrypt.encrypt("Hello world")).to eq("keder ohulw")
+    expect(encrypt.encrypt("Hello world!")).to eq("keder ohulw!")
   end
 end
