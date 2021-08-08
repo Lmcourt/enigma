@@ -1,11 +1,15 @@
-require './lib/shifter'
+require './keyable'
 class Decryption
 
-  include Shifter
+  include Keyable
   attr_reader :key, :date
   def initialize(key, date)
     @key = key
     @date = date
+  end
+
+  def chars
+    ("a".."z").to_a << " "
   end
 
   def decrypt(message)

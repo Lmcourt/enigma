@@ -1,5 +1,5 @@
 require './lib/decryption'
-require './lib/shifter'
+require './lib/keyable'
 
 RSpec.describe Decryption do
   it 'exists' do
