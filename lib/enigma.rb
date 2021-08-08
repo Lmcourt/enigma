@@ -1,9 +1,5 @@
 require 'date'
-# require './keyable'
-
-
 class Enigma
-# include Keyable
 
   def todays_date
     Date.today.strftime("%d%m%y")

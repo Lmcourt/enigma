@@ -1,8 +1,7 @@
 module Keyable
 
   def keys(key)
-    a = key.split("")
-    a.each_cons(2).map do |num|
+    key.split("").each_cons(2).map do |num|
       num.join
     end
   end

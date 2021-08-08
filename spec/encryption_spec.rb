@@ -4,8 +4,10 @@ require './lib/keyable'
 RSpec.describe Encryption do
   it 'exists' do
     encrypt = Encryption.new("02715", '040895')
+
     expect(encrypt).to be_a(Encryption)
   end
+
   it 'has characters' do
     encrypt = Encryption.new("02715", '040895')
 
@@ -16,6 +18,7 @@ RSpec.describe Encryption do
     encrypt = Encryption.new("02715", '040895')
 
     expected = ["02", "27", "71", "15"]
+
     expect(encrypt.keys("02715")).to eq(expected)
   end
 
@@ -39,6 +42,7 @@ RSpec.describe Encryption do
 
   it 'encrypts' do
     encrypt = Encryption.new("02715", '040895')
+    
     expect(encrypt.encrypt("hello world")).to eq("keder ohulw")
     expect(encrypt.encrypt("Hello world")).to eq("keder ohulw")
     expect(encrypt.encrypt("Hello world!")).to eq("keder ohulw!")
