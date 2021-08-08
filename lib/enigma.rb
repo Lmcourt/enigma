@@ -14,16 +14,16 @@ class Enigma
 
   def encrypt(message, key = random_num, date = todays_date)
     encrypts = Encryption.new(key, date)
-    encrypted = {
+    {
       encryption: encrypts.encrypt(message),
       key: key,
       date: date
     }
   end
 
-  def decrypt(message, key = random_num, date = todays_date)
+  def decrypt(message, key, date = todays_date)
     decrypts = Decryption.new(key, date)
-    decrypted = {
+    {
       decryption: decrypts.decrypt(message),
       key: key,
       date: date
