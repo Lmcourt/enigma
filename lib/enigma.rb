@@ -1,12 +1,9 @@
 require 'date'
+# require './keyable'
+
 
 class Enigma
-
-  def random_num
-    5.times.map do
-      rand(0..9)
-    end.join
-  end
+# include Keyable
 
   def todays_date
     Date.today.strftime("%d%m%y")
