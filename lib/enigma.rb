@@ -13,7 +13,7 @@ class Enigma
   end
 
   def encrypt(message, key = random_num, date = todays_date)
-    encrypts = Cryption.new(key, date)
+    encrypts = Encryption.new(key, date)
     encrypted = {
       encryption: encrypts.encrypt(message),
       key: key,
@@ -22,7 +22,7 @@ class Enigma
   end
 
   def decrypt(message, key = random_num, date = todays_date)
-    decrypts = Cryption.new(key, date)
+    decrypts = Decryption.new(key, date)
     decrypted = {
       encryption: decrypts.decrypt(message),
       key: key,
