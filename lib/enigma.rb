@@ -20,4 +20,13 @@ class Enigma
       date: date
     }
   end
+
+  def decrypt(message, key = random_num, date = todays_date)
+    decrypts = Cryption.new(key, date)
+    decrypted = {
+      encryption: decrypts.decrypt(message),
+      key: key,
+      date: date
+    }
+  end
 end
