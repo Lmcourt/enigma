@@ -24,7 +24,7 @@ module Shifter
     shifts
   end
 
-  def characters
+  def chars
     ("a".."z").to_a << " "
   end
 end
