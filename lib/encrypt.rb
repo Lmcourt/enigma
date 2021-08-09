@@ -1,5 +1,5 @@
 require './lib/enigma'
-require './lib/encryption'
+require './lib/cryption'
 
 handle = File.open(ARGV[0], "r")
 incoming_text = handle.read
