@@ -7,10 +7,9 @@ handle.close
 
 enigma = Enigma.new
 decrypt = enigma.decrypt(incoming_text, ARGV[2], ARGV[3])
-decrypted_text = decrypt[:decryption]
 
 puts "Created 'decrypted.txt' with the key #{ARGV[2]} and date #{ARGV[3]}"
 
 writer = File.open(ARGV[1], "w")
-writer.write(decrypted_text)
+writer.write(decrypt[:decryption])
 writer.close
