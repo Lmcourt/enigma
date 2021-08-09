@@ -15,7 +15,7 @@ class Cryption
   def encrypt(message)
     message.downcase.each_char.with_index.map do |letter, i|
       if chars.include?(letter)
-          chars[(chars.index(letter) + shifts.values[i % 4]) % chars.length]
+        chars[(chars.index(letter) + shifts.values[i % 4]) % chars.length]
       else
         letter
       end
@@ -25,7 +25,7 @@ class Cryption
   def decrypt(message)
     message.downcase.each_char.with_index.map do |letter, i|
       if chars.include?(letter)
-          chars[(chars.index(letter) - shifts.values[i % 4]) % chars.length]
+        chars[(chars.index(letter) - shifts.values[i % 4]) % chars.length]
       else
         letter
       end
