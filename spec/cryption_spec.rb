@@ -8,6 +8,13 @@ RSpec.describe Cryption do
     expect(crypt).to be_a(Cryption)
   end
 
+  it 'has attributes' do
+    crypt = Cryption.new("02715", '040895')
+
+    expect(crypt.key).to eq("02715")
+    expect(crypt.date).to eq("040895")
+  end
+
   it 'has characters' do
     crypt = Cryption.new("02715", '040895')
 
