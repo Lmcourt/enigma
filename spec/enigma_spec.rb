@@ -1,7 +1,6 @@
+require 'spec_helper'
 require 'date'
 require './lib/enigma'
-require 'simplecov'
-SimpleCov.start
 
 RSpec.describe Enigma do
   it 'exists' do
@@ -11,15 +10,17 @@ RSpec.describe Enigma do
 
   it 'generates a random key' do
     enigma = Enigma.new
-    allow(enigma).to receive(:random_num).and_return('94860')
+    allow(enigma).to receive(:random_num).and_return('09486')
 
-    expect(enigma.random_num).to eq('94860')
+    expect(enigma.random_num).to eq('09486')
   end
 
   it 'generates todays date' do
     enigma = Enigma.new
-    allow(enigma).to receive(:todays_date).and_return('060821')
 
+    expect(enigma.todays_date).to be_a(String)
+
+    allow(enigma).to receive(:todays_date).and_return('060821')
     expect(enigma.todays_date).to eq('060821')
   end
 
@@ -31,7 +32,7 @@ RSpec.describe Enigma do
      key: "02715",
     date: "040895"
     }
-    
+
     expect(enigma.encrypt("hello world", "02715", "040895")).to eq(expected)
   end
 

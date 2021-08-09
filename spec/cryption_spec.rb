@@ -1,5 +1,6 @@
 require './lib/cryption'
 require './lib/keyable'
+require 'spec_helper'
 
 RSpec.describe Cryption do
   it 'exists' do
