@@ -13,18 +13,18 @@ class Enigma
   end
 
   def encrypt(message, key = random_num, date = todays_date)
-    encrypts = Cryption.new(key, date)
+    encrypts = Cryption.new(key, date, message)
     {
-      encryption: encrypts.encrypt(message),
+      encryption: encrypts.encrypt,
       key: key,
       date: date
     }
   end
 
   def decrypt(message, key, date = todays_date)
-    decrypts = Cryption.new(key, date)
+    decrypts = Cryption.new(key, date, message)
     {
-      decryption: decrypts.decrypt(message),
+      decryption: decrypts.decrypt,
       key: key,
       date: date
     }
