@@ -21,13 +21,13 @@ RSpec.describe Cryption do
 
     expected = ["02", "27", "71", "15"]
 
-    expect(crypt.keys("02715")).to eq(expected)
+    expect(crypt.keys).to eq(expected)
   end
 
   it 'has date_squared' do
     crypt = Cryption.new("02715", '040895', "hello world")
 
-    expect(crypt.date_squared('040895')).to eq(1672401025)
+    expect(crypt.date_squared).to eq(1672401025)
   end
 
   it 'has offsets' do
