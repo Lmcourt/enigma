@@ -1,11 +1,16 @@
 class Cryption
 
-  attr_reader :key, :date
-  def initialize(key, date)
+  attr_reader :key, :date, :message
+  def initialize(key, date, message)
     @key = key
     @date = date
+    @message = message
   end
 
+  def downcased
+    @message.downcase
+  end
+  
   def keys(key)
     key.split("").each_cons(2).map do |num|
       num.join
@@ -33,8 +38,8 @@ class Cryption
     ("a".."z").to_a << " "
   end
 
-  def encrypt(message)
-    message.downcase.each_char.with_index.map do |letter, i|
+  def encrypt
+    downcased.each_char.with_index.map do |letter, i|
       if chars.include?(letter)
         chars[(chars.index(letter) + shifts.values[i % 4]) % chars.length]
       else
@@ -43,8 +48,8 @@ class Cryption
     end.join
   end
 
-  def decrypt(message)
-    message.downcase.each_char.with_index.map do |letter, i|
+  def decrypt
+    downcased.each_char.with_index.map do |letter, i|
       if chars.include?(letter)
         chars[(chars.index(letter) - shifts.values[i % 4]) % chars.length]
       else
