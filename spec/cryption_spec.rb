@@ -1,5 +1,4 @@
 require './lib/cryption'
-require './lib/keyable'
 require 'spec_helper'
 
 RSpec.describe Cryption do
@@ -14,12 +13,6 @@ RSpec.describe Cryption do
 
     expect(crypt.key).to eq("02715")
     expect(crypt.date).to eq("040895")
-  end
-
-  it 'has characters' do
-    crypt = Cryption.new("02715", '040895')
-
-    expect(crypt.chars).to eq(("a".."z").to_a << " ")
   end
 
   it 'has keys' do
@@ -46,6 +39,12 @@ RSpec.describe Cryption do
     crypt = Cryption.new("02715", '040895')
 
     expect(crypt.shifts).to eq({ :A => 3, :B => 27, :C => 73, :D => 20})
+  end
+
+  it 'has characters' do
+    crypt = Cryption.new("02715", '040895')
+
+    expect(crypt.chars).to eq(("a".."z").to_a << " ")
   end
 
   it 'encrypts' do
