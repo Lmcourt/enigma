@@ -13,7 +13,7 @@ class Cryption
 
   def keys
     @key.split("").each_cons(2).map do |num|
-      num.join
+      num.join.to_i
     end
   end
 
@@ -22,15 +22,15 @@ class Cryption
   end
 
   def offsets
-    date_squared.to_s[-4..-1].split("")
+    date_squared.digits.reverse[-4..-1]
   end
 
   def shifts
     shifts = {}
-    shifts[:A] = (offsets[0].to_i + keys[0].to_i)
-    shifts[:B] = (offsets[1].to_i + keys[1].to_i)
-    shifts[:C] = (offsets[2].to_i + keys[2].to_i)
-    shifts[:D] = (offsets[3].to_i + keys[3].to_i)
+    shifts[:A] = (offsets[0] + keys[0])
+    shifts[:B] = (offsets[1] + keys[1])
+    shifts[:C] = (offsets[2] + keys[2])
+    shifts[:D] = (offsets[3] + keys[3])
     shifts
   end
 

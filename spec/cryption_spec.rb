@@ -19,7 +19,7 @@ RSpec.describe Cryption do
   it 'has keys' do
     crypt = Cryption.new("02715", '040895', "hello world")
 
-    expected = ["02", "27", "71", "15"]
+    expected = [2, 27, 71, 15]
 
     expect(crypt.keys).to eq(expected)
   end
@@ -33,7 +33,7 @@ RSpec.describe Cryption do
   it 'has offsets' do
     crypt = Cryption.new("02715", '040895', "hello world")
 
-    expect(crypt.offsets).to eq(["1", "0", "2", "5"])
+    expect(crypt.offsets).to eq([1, 0, 2, 5])
   end
 
   it 'has shifts' do
