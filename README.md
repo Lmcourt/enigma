@@ -4,22 +4,22 @@
 **Meets Expectations**
 
 
-Enigma Class with encrypt and decrypt methods successfully implemented. Encrypt/decrypt command line interfaces successfully implemented
+Enigma Class with encrypt and decrypt methods successfully implemented. Encrypt/decrypt command line interfaces successfully implemented.
 
 ## Object Oriented Programming
-**Above Expectations/Meets Expectations**
+**Meets Expectations**
 
 
-I implemented a module for generating keys which is used in both the encryption and decryption classes. Classes are broken into logical components and no class has access to information/behaviors they shouldn't know about. I'm not sure the module is completely necessary if I had kept my encryption and decryption classes together which is why I put myself in the middle of above and meets expectations. Each method has single responsibility.
+ No class has access to information/behaviors they shouldn't know about. I combined my key/shift generating methods into my Cryption class because I didn't have any other classes that needed access to those methods.
 
 ## Ruby Conventions and Mechanics
 **Above Expectations**
 
 
-Classes, methods, and variables are well named so that they clearly communicate their purpose. Code is all properly indented and syntax is consistent. No methods are longer than 10 lines long. Most enumerables/data structures chosen are the most efficient tool for a given job, and students can speak as to why those enumerables/data structures were chosen.
+I named all classes, methods, and variables to clearly communicate their purpose. I used proper indentation and syntax is consistent throughout. All methods are shorter than 10 lines and no line is more than 80 characters. Most enumerables/data structures are the most efficient. A hash was used to create the shifts and easily call the values based on the index of the shift within the hash.
 
 ## Test Driven Development
-**Above Expectations**
+**Above/Meets Expectations**
 
 
-I used stubs in my enigma class spec to test the random generation of keys. Every method is tested and coverage metrics shows 100% coverage.
+I used stubs in my enigma class spec to test the random generation of keys and date. Additional testing was done to test the class of the date to ensure 100% test coverage. Testing is implemented to ensure all characters not included in the array do not change or break the code. Tests are performed to ensure capitalized letters are downcased. Every method is tested and coverage metrics shows 100% coverage. I added tests to my cryption spec to test the attributes after I had already finished. All other tests were written before code.
