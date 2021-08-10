@@ -8,13 +8,6 @@ RSpec.describe Enigma do
     expect(enigma).to be_a(Enigma)
   end
 
-  it 'generates a random key' do
-    enigma = Enigma.new
-    allow(enigma).to receive(:random_num).and_return('09486')
-
-    expect(enigma.random_num).to eq('09486')
-  end
-
   it 'generates todays date' do
     enigma = Enigma.new
 
@@ -22,6 +15,15 @@ RSpec.describe Enigma do
 
     allow(enigma).to receive(:todays_date).and_return('060821')
     expect(enigma.todays_date).to eq('060821')
+  end
+
+  it 'generates a random key' do
+    enigma = Enigma.new
+
+    expect(enigma.random_num).to be_a(String)
+
+    allow(enigma).to receive(:random_num).and_return('09486')
+    expect(enigma.random_num).to eq('09486')
   end
 
   it 'encrypts with key and date' do
